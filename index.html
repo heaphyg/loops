@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>cheat sheet</title>
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+</head>
+<body>
+  <h1>Javascript Code and Output</h1>
+  <div>
+  	  <div id="object1">
+  	  	<pre>var votes = {
+  "Alex": { president: "Bob", vicePresident: "Devin", secretary: "Gail", treasurer: "Kerry" },
+  "Bob": { president: "Mary", vicePresident: "Hermann", secretary: "Fred", treasurer: "Ivy" },
+  "Cindy": { president: "Cindy", vicePresident: "Hermann", secretary: "Bob", treasurer: "Bob" },
+}</pre>
+  	  </div>
+  	  <div id="object2">
+  	  	<pre>var voteCount = {
+  president: {},
+  vicePresident: {},
+  secretary: {},
+  treasurer: {}
+}</pre>
+
+  	</div>
+	  <ul id="list">
+	  	<h2>Example 1</h2>
+	  	<li><pre>for (var name in votes) {
+voteCount.president[votes[name].president] = 0
+}       </Pre></li>
+        <li>console.log(voteCount.president);</li>
+        <h2>output</h2>
+
+	  	<li><pre>{ Bob: 0, Mary: 0, Cindy: 0 }</Pre></li>
+	  	<h2>Example 2</h2>
+	  	<li><pre>for (var name in votes) {
+voteCount.president[votes[name].president] = 0
+}       </Pre></li>
+	  	<li><pre>var collector = []
+for (key in voteCount){
+     for (prop in voteCount[key]){
+          collector.push(prop) 
+     }
+}</pre></li>
+	  	<li>console.log(collector)</li>
+	  	<h2>output</h2>
+	  	<li>[ 'Bob', 'Mary', 'Cindy' ]</li>
+	  	<h2>Example 3</h2>
+	  	<li><pre>for (var name in votes) {
+voteCount.president[votes[name].president] = 0
+}       </Pre></li>
+	  	<li><pre> var collector = []
+for (voter in votes){
+    for (office in votes[voter]){
+        collector.push(votes[voter][office])
+    }
+}</pre></li>
+	  	<li>console.log(collector);</li>
+        <h2>output</h2>
+	  	<li><pre>[ 'Bob',
+  'Devin',
+  'Gail',
+  'Kerry',
+  'Mary',
+  'Hermann',
+  'Fred',
+  'Ivy',
+  'Cindy',
+  'Hermann',
+  'Bob',
+  'Bob' ]</pre></li>
+        <h2>Example 4</h2>
+        <li><pre>for (var name in votes) {
+voteCount.president[votes[name].president] = 0
+}       </Pre></li>
+	  	<li><pre> var collector = []
+for (voter in votes){
+    for (office in votes[voter]){
+        collector.push(votes[voter][office])
+    }
+}</pre></li>
+	  	<li>presidents = []<br></br>
+for (i = 0; i < collector.length; i+=4) {
+   presidents.push(collector[i])
+}</li>
+	  	<li>console.log(presidents)</li>
+	  	<h2>Output</h2>
+	  	<li>[ 'Bob', 'Mary', 'Cindy' ]</li>
+	  	<h2>Output</h2>
+	  	<h2>Output</h2>
+	  	<h2>Output</h2>
+	  </ul>
+  </div>
+	
+
+</body>
+</html>
